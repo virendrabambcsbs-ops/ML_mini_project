@@ -1,8 +1,26 @@
-# QuickBite Outputs Directory
+# QuickBite Market Basket Analysis
 
-This directory stores generated analytical outputs from the QuickBite Market Basket Intelligence engine:
-- Discovered Association Rules CSV (`association_rules.csv`)
-- Frequent Itemsets CSV (`frequent_itemsets.csv`)
-- Parameter Tuning Lab Experiment Runs (`parameter_tuning_results.csv`)
-- Cleaned Transaction Matrices (`cleaned_transactions.csv`)
-- Academic Project Report (`quickbite_academic_report.md` / `.pdf`)
+QuickBite is a Streamlit application for fast-food market basket analysis,
+association-rule mining, and combo recommendations.
+
+## Project layout
+
+- `app.py`: Streamlit application entry point
+- `src/`: reusable preprocessing, mining, recommendation, reporting, and visualization code
+- `data/`: source datasets and the dataset-generation script
+- `notebooks/`: reproducible analysis notebook and notebook builder
+- `tests/`: automated tests
+- `outputs/`: generated reports and exported analysis results
+
+## Run the application
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Run the tests with:
+
+```bash
+pytest
+```

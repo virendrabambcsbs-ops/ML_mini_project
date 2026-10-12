@@ -1,2 +1,9 @@
-# Created by pytest automatically.
-*
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated analysis outputs
+outputs/*.csv
+outputs/*.md
+outputs/*.pdf
