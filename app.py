@@ -216,6 +216,28 @@ with st.sidebar:
         item_col = "item_name"
     else:
         file_source = "custom"
+        with st.expander("📋 Required custom CSV format", expanded=True):
+            st.markdown(
+                """
+                Your file must contain **one row per item in an order** and at least
+                these two columns:
+
+                - **Order ID**: identifies the basket/transaction. The same value
+                  must be repeated for every item in the same order.
+                - **Item / Product**: the name of the menu item or product.
+
+                Optional columns such as `quantity`, `price`, and `date` are allowed
+                but are not required for the analysis. The file must be a
+                comma-separated CSV with a header row. Blank order IDs or item names
+                are removed automatically.
+                """
+            )
+            st.download_button(
+                "⬇️ Download CSV template",
+                data="order_id,item_name,quantity,price\n",
+                file_name="quickbite_transaction_template.csv",
+                mime="text/csv",
+            )
         uploaded_file = st.file_uploader("Upload CSV File", type=["csv"])
         if uploaded_file is not None:
             uploaded_file_bytes = uploaded_file.getvalue()
